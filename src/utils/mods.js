@@ -6,7 +6,7 @@ const ModsSchema = new Schema({
 
 });
 
-const ModsModel = model("ModsModel", ModsSchema);
+const ModsModel = model("ModsModel", ModsSchema, "mods");
 
 module.exports = {
     ModsModel,

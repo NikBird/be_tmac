@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
-//const { UserModel } = require("./user");
+const { UserModel } = require("./user");
+const { ModsModel } = require("./mods");
 require('dotenv').config()
+
 const connectDatabase = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
@@ -23,7 +25,18 @@ const fetchUser = async (username) => {
   }
 }
 
+const fetchMod = async (username, password) => {
+  try {
+    const modsMan = await ModsModel.findOne({ username, password });
+    return modsMan;
+  } catch (err) {
+    console.error(err);
+    return false;
+  }
+}
+
 module.exports = {
   connectDatabase,
-  fetchUser
+  fetchUser,
+  fetchMod
 };

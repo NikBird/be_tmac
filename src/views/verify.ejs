@@ -9,60 +9,41 @@
 <div class="container">
     <div>
         <form action="/verify" method="post">
-          <label for="fname">Username</label>
-          <input type="text" id="fname" name="username" placeholder="Your name..">
-      
-        
-        
-          <input type="submit" value="Search">
+            <label for="fname">Username</label>
+            <input type="text" id="fname" name="username" placeholder="Your name..">
+            <input type="submit" value="Search">
         </form>
-      </div>
-      
-      <% if(data!= false) { %>
-      
-      
-      <form action="/editUser/<%= username %>"  method="post" >
+    </div>
+    <% if(data!= false) { %>
+        <form action="/editUser/<%= username %>"  method="post" >
           
-          <label >Username : <%= username %></label><br>
-          <label >Status :   <% if(status== true) { %>  Verified  <% } else {%> Denied  <% } %>    </label><br>
+            <label >Username : <%= username %></label><br>
+            <label >Status :   <% if(status== true) { %>  Verified  <% } else {%> Denied  <% } %>    </label><br>
+            <label for="fname">Change status to </label>
+            <select id="country" name="status">
+            <% if(status!= true) { %>   
+                <option value="true">verified</option>
+            <% } %> 
       
-      
-          <label for="fname">Change status to </label>
-          <select id="country" name="status">
-            
-      
-              <% if(status!= true) { %>   
-              <option value="true">verified</option>
-              <% } %> 
-      
-              <% if(status!= false) { %>   
-              <option value="false">denied</option>
-              <% } %> 
+            <% if(status!= false) { %>   
+                <option value="false">denied</option>
+            <% } %> 
             </select><br>
-      
-      
-        
-        
-          <input type="submit" value="Update">
+        <input type="submit" value="Update">
         </form>
-      
-      <% } else if(add==true){ %>  
-          <label >There is no user with this username , want you add <b><%= username %></b>  it to db ? </label><br>
-          <div>
-              <form action="/addUser/<%= username %>" method="post">
-             
+    <% } else if(add==true){ %>  
+        <label >There is no user with this username , want you add <b><%= username %></b>  it to db ? </label><br>
+        <div>
+            <form action="/addUser/<%= username %>" method="post">
                 <label for="fname">Status</label><br>
                 <select id="country" name="status">
-              
-                  <option value="true">verified</option>
-                  <option value="false">denied</option>
+                    <option value="true">verified</option>
+                    <option value="false">denied</option>
                 </select><br>
-              
-              
                 <input type="submit" value="Add">
-              </form>
-            </div>
-          <% } %>
+            </form>
+        </div>
+        <% } %>
     <div class="row col-md-6 col-md-offset-2 custyle">
         <%if (verified.length != 0){ %>
         <h1>Verifed Users</h1>
@@ -88,12 +69,9 @@
                 <td><%= row.statusUpdateTime %></td>
                 <td><% if(row.status== true) { %>  Verified  <% } else {%> Denied  <% } %> </td>
                 <% })}  %>
-               
             </tr>
-        
     </table>
     </div>
-    
     <div class="row col-md-6 col-md-offset-2 custyle">
         <%if (denied.length != 0){ %>
         <h1>Denied Users</h1>
@@ -119,10 +97,7 @@
                 <td><%= row.statusUpdateTime %></td>
                 <td><% if(row.status== true) { %>  Verified  <% } else {%> Denied  <% } %> </td>
                 <% })}  %>
-               
             </tr>
-        
     </table>
     </div>
-    
 </div>
