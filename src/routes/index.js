@@ -15,41 +15,33 @@ app.use(session({
     resave: false, // don't save session if unmodified
     saveUninitialized: false, // don't create session until something stored
     secret: 'shhhh, very secre'
-  }));
-  app.use(function(req, res, next){
+}));
+    app.use(function(req, res, next){
     res.locals.user=req.session.user;
     next();
-  });
+});
 
 router.use(cookieParser());
-
 router.get('', async (req, res) => {res.render('index')})
-
 
 router.get('/verify', async (req, res) => {
     if(req.session.user==null){
-        res.redirect('/');}else{
-    
-       
+        res.redirect('/');
+        } 
+            else 
+        {
             User.find({status:true}).exec((errVerifed,verified)=>{
-                
                 User.find({status:false}).exec((errDenied,denied)=>{
                     if(!errDenied){
-                 
                         res.render('verify',{ verified: verified , denied:denied,data:false,add:false });
-                      
                     } else{
                         res.redirect('/accounts');
                     }
-                   
                 });
-               
             });
-       
-   
-    }
-
+        }
    });
+
    router.post('/editUser/:id', async (req, res) => {
     try {
         await User.updateOne(
