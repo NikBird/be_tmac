@@ -25,6 +25,19 @@ app.use(function(req, res, next){
 router.use(cookieParser());
 router.get('', async (req, res) => {res.render('index')})
 
+router.post('/deleteUser/:id', async (req, res) => {
+    try {
+        await User.deleteOne(
+            { username: req.params.id }
+
+        );
+        res.redirect('/verify')
+      } catch (err) {
+        console.log("Error while updating user :============> ", err);
+        res.status(500).json(  err);
+      }
+})
+
 router.get('/verify', async (req, res) => {
     if(req.session.user==null){
         res.redirect('/');
@@ -62,6 +75,13 @@ router.post('/addUser/:id', async (req, res) => {
     const user=new User();
     user.status=req.body.status;
     user.username=req.params.id;
+    user.requestedBy='theDigitalCat#5146 <@667197650654986250>';
+    user.requestedById='667197650654986250';
+    user.statusUpdateBy='theDigitalCat#5146 <@667197650654986250>'
+    user.statusUpdateById='667197650654986250';
+
+    var d = new Date();
+    user.statusUpdateTime=d.toDateString()+' '+d.toLocaleTimeString();
     try {
         await user.save();
         res.redirect('/verify')
@@ -69,7 +89,7 @@ router.post('/addUser/:id', async (req, res) => {
         catch (error) {
         res.status(500).send(error);
     }
-})
+});
 
 router.post('/verify', async (req, res) => {
     userQuery=req.body.username;

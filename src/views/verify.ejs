@@ -31,6 +31,9 @@
             </select><br>
         <input type="submit" value="Update">
         </form>
+        <form action="/deleteUser/<%= username %>"  id="dUser"method="post" >
+            <button type="button" onclick="checker()">delete</button>
+        </form>
     <% } else if(add==true){ %>  
         <label >There is no user with this username , want you add <b><%= username %></b>  it to db ? </label><br>
         <div>
@@ -101,3 +104,12 @@
     </table>
     </div>
 </div>
+<script>
+function checker(){
+    if(window.confirm("Are you sure")){
+        document.getElementById("dUser").submit();
+    } else {
+        return;
+    }
+}
+</script>
