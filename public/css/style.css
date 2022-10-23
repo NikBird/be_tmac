@@ -1836,6 +1836,125 @@ button.toast-close-button {
 .rel-blk button:not(:last-child) {
   margin-right: 8px;
 }
-.stk_nbox{padding-bottom: 30px;}.stk_cup{color:#be9a74;padding-right: 6px}.pol_supply{color:#be9a74 !important;font-weight: 600;}.dash-block-wrap{background: #1b1b1b;padding: 20px;}
-.banner_image, .text_main_sec{visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp2;}
-.banner_btns{visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp2;}
+
+.stk_nbox {
+  padding-bottom: 30px;
+}
+
+.stk_cup {
+  color: #be9a74;
+  padding-right: 6px
+}
+
+.pol_supply {
+  color: #be9a74 !important;
+  font-weight: 600;
+}
+
+.dash-block-wrap {
+  background: #1b1b1b;
+  padding: 20px;
+}
+
+.banner_image,
+.text_main_sec {
+  visibility: visible;
+  animation-delay: 0.1s;
+  animation-name: fadeInUp2;
+}
+
+.banner_btns {
+  visibility: visible;
+  animation-delay: 0.2s;
+  animation-name: fadeInUp2;
+}
+
+
+
+/* new css start */
+/* header css start */
+.header-area {
+  padding: 0 20px;
+  background: #131327;
+  border-bottom: 1px solid #4d5e85
+}
+
+.header-area .navbar-collapse {
+  justify-content: flex-end
+}
+
+.header-area .navbar {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0
+}
+
+.header-search-part {
+  height: 100%;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #1e1f31;
+  padding: 34px 40px 40px
+}
+
+.hd-search-g-wrap {
+  display: grid;
+  grid-template-columns: auto 40px
+}
+
+.hd-search-g-wrap button {
+  width: 40px;
+  height: 40px;
+  background-color: #1fc1c3;
+  border-radius: 2px;
+  position: relative;
+  transition: .3s
+}
+
+.hd-search-g-wrap button:hover {
+  background-color: #1db0b3
+}
+
+.hd-search-g-wrap button::after {
+  content: "";
+  border-width: 9px;
+  border-style: solid;
+  border-color: transparent transparent transparent #121326;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px
+}
+
+.hd-search-g-wrap .input-design {
+  border-bottom: 1px solid #1fc1c3;
+  height: 40px
+}
+
+.header-search-part h5 {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 8px
+}
+
+.main-menu li a {
+  color: #fff;
+  font-family: jost, sans-serif;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 !important;
+  transition: all .4s ease;
+  position: relative
+}
+
+.logo-part img {
+  width: 36px
+}
+
+/* header css end */
+/* new css end */
