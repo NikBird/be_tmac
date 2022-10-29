@@ -46,92 +46,128 @@
                     </form>
                 </div>
                 <% } %>
-                    <div class="row col-md-6 col-md-offset-2 custyle">
-                        <%if (verified.length !=0){ %>
-                            <h1>Verifed Users</h1>
-                            <table class="table table-striped custab">
-                                <thead>
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>requestedBy</th>
-                                        <th>requested By Id ID</th>
-                                        <th>status Updated By</th>
-                                        <th>status Updated By Id</th>
-                                        <th>status Updated Time </th>
-                                        <th>status</th>
-                                    </tr>
-                                </thead>
-                                <% verified.forEach(function(row){ %>
-                                    <tr>
-                                        <td>
-                                            <%= row.username %>
-                                        </td>
-                                        <td>
-                                            <%= row.requestedBy %>
-                                        </td>
-                                        <td>
-                                            <%= row.requestedById %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateBy %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateById %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateTime %>
-                                        </td>
-                                        <td>
-                                            <% if(row.status==true) { %> Verified <% } else {%> Denied <% } %>
-                                        </td>
-                                        <% })} %>
-                                    </tr>
-                            </table>
+
+                    <div class="users-table-area">
+                        <div class="cs-container">
+                            <div id="userTab">
+                                <ul class="tab-triggers">
+                                    <li class="tab-link current" data-tab="verified-tab">Verified</li>
+                                    <li class="tab-link" data-tab="pending-tab">Pending</li>
+                                    <li class="tab-link" data-tab="denied-tab">Denied</li>
+                                </ul>
+
+                                <div class="tab-contents-wrapper">
+                                    <div class="tb-content" id="verified-tab">
+                                        <div class="tb-inner">
+                                            Verified Tab pane
+
+                                            <div class="tbl-cmn-rw">
+                                                <%if (verified.length !=0){ %>
+                                                    <h1>Verifed Users</h1>
+                                                    <table class="cmn-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Username</th>
+                                                                <th>requestedBy</th>
+                                                                <th>requested By Id ID</th>
+                                                                <th>status Updated By</th>
+                                                                <th>status Updated By Id</th>
+                                                                <th>status Updated Time </th>
+                                                                <th>status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <% verified.forEach(function(row){ %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= row.username %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.requestedBy %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.requestedById %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateBy %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateById %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateTime %>
+                                                                </td>
+                                                                <td>
+                                                                    <% if(row.status==true) { %> Verified <% } else {%>
+                                                                            Denied <% } %>
+                                                                </td>
+                                                                <% })} %>
+                                                            </tr>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tb-content" id="pending-tab">
+                                        <div class="tb-inner">
+                                            Pending Tab pane
+                                        </div>
+                                    </div>
+                                    <div class="tb-content" id="denied-tab">
+                                        <div class="tb-inner">
+                                            Denied Tab pane
+                                            <div class="tbl-cmn-rw">
+                                                <%if (denied.length !=0){ %>
+                                                    <h1>Denied Users</h1>
+                                                    <table class="cmn-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Username</th>
+                                                                <th>requestedBy</th>
+                                                                <th>requested By Id ID</th>
+                                                                <th>status Updated By</th>
+                                                                <th>status Updated By Id</th>
+                                                                <th>status Updated Time </th>
+                                                                <th>status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <% denied.forEach(function(row){ %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= row.username %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.requestedBy %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.requestedById %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateBy %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateById %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= row.statusUpdateTime %>
+                                                                </td>
+                                                                <td>
+                                                                    <% if(row.status==true) { %> Verified <% } else {%>
+                                                                            Denied <% } %>
+                                                                </td>
+                                                                <% })} %>
+                                                            </tr>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row col-md-6 col-md-offset-2 custyle">
-                        <%if (denied.length !=0){ %>
-                            <h1>Denied Users</h1>
-                            <table class="table table-striped custab">
-                                <thead>
-                                    <tr>
-                                        <th>Username</th>
-                                        <th>requestedBy</th>
-                                        <th>requested By Id ID</th>
-                                        <th>status Updated By</th>
-                                        <th>status Updated By Id</th>
-                                        <th>status Updated Time </th>
-                                        <th>status</th>
-                                    </tr>
-                                </thead>
-                                <% denied.forEach(function(row){ %>
-                                    <tr>
-                                        <td>
-                                            <%= row.username %>
-                                        </td>
-                                        <td>
-                                            <%= row.requestedBy %>
-                                        </td>
-                                        <td>
-                                            <%= row.requestedById %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateBy %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateById %>
-                                        </td>
-                                        <td>
-                                            <%= row.statusUpdateTime %>
-                                        </td>
-                                        <td>
-                                            <% if(row.status==true) { %> Verified <% } else {%> Denied <% } %>
-                                        </td>
-                                        <% })} %>
-                                    </tr>
-                            </table>
-                    </div>
+
+
     </div>
     <script>
+
         function checker() {
             if (window.confirm("Are you sure")) {
                 document.getElementById("dUser").submit();
@@ -139,5 +175,37 @@
                 return;
             }
         }
+
+        let tabFunc = function (parentId) {
+            //get all tab link elements
+            let tabTriggers = document.querySelectorAll(`${parentId} .tab-link`);
+            //get all tab content elements
+            let tabContent = document.querySelectorAll(`${parentId} .tb-content`);
+            //loop through each tab
+            tabTriggers.forEach(function (each) {
+                {
+                    each.addEventListener('click', function () {
+                        //each time tab clicked remove all current classes
+                        //remove 'current' class from all tabs
+                        for (let i = 0; i < tabTriggers.length; i++) {
+                            tabTriggers[i].classList.remove('current');
+                        };
+                        //remove 'current' class from all tab content
+                        for (let i = 0; i < tabContent.length; i++) {
+                            tabContent[i].classList.remove('current');
+                        };
+                        //add current class back to the clicked tab
+                        this.className += ' current';
+                        //get data-tab attribute of what has been clicked
+                        let matchingTab = this.getAttribute('data-tab');
+                        //add current class to the tabContent element thats id matches the data-tab of the clicked tab
+                        document.getElementById(matchingTab).className += ' current';
+                    })
+                }
+            })
+        }
+
+        tabFunc('#userTab');
+
     </script>
     <%- include('./common/footer') %>

@@ -1973,4 +1973,14 @@ button.toast-close-button {
 }
 
 /* header css end */
+/* users-table area css start */
+.tb-content {
+  display: none;
+}
+
+.tb-content.current {
+  display: block;
+}
+
+/* users-table area css end */
 /* new css end */
