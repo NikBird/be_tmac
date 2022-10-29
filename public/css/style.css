@@ -1982,5 +1982,24 @@ button.toast-close-button {
   display: block;
 }
 
+.cs-container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tab-triggers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  list-style: none;
+}
+
+.tab-triggers li {
+  cursor: pointer;
+  transition: all .3s;
+}
+
 /* users-table area css end */
 /* new css end */
