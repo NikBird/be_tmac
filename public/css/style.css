@@ -1881,7 +1881,6 @@ button.toast-close-button {
 /* new css start */
 /* header css start */
 .header-area {
-  padding: 0 20px;
   background: #131327;
   border-bottom: 1px solid #4d5e85
 }
@@ -1983,8 +1982,8 @@ button.toast-close-button {
   grid-template-columns: 200px auto;
 }
 
-.header-right {
-  text-align: right;
+.mobile-tgl-btn {
+  margin-left: auto;
 }
 
 .navbar-toggler-alternative-icon {
@@ -2001,6 +2000,7 @@ button.toast-close-button {
   margin: 0 auto;
   background-color: #fff;
   transition: background-color 0.35s 0s ease;
+  height: 2px;
 }
 
 .navbar-toggler-alternative-icon>span::before,
@@ -2011,6 +2011,7 @@ button.toast-close-button {
   background-color: #fff;
   transform-origin: 50% 50%;
   transition: background-color 0.35s 0s ease, top 0.2s 0.4s ease, left 0.2s 0.2s ease, right 0.2s 0.2s ease, width 0.2s 0.2s ease, transform 0.2s ease;
+  height: 2px;
 }
 
 .navbar-toggler-alternative-icon>span::before {
@@ -2311,6 +2312,22 @@ button.toast-close-button {
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
 }
 
 /* footer css end */

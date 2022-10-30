@@ -18,12 +18,12 @@
                     <a href="#" class="navbar-brand m-0 h1" onclick="showLoading()"><img
                             src="./icons/single-logo.png"></a>
                 </div>
-                <button class="mobile-tgl-btn">
+                <button class="mobile-tgl-btn" data-tgl-btn>
                     <span class="navbar-toggler-alternative-icon">
                         <span></span>
                     </span>
                 </button>
-                <ul class="main-menu">
+                <ul class="main-menu" id="main-menu">
                     <li class="nav-item active"><a href="#/witness" onclick="Link(1)">Witness</a>
                     </li>
                     <li class="nav-item"><a href="#/richlist" onclick="Link(3)">Richlist</a>
@@ -32,3 +32,15 @@
             </div>
         </div>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let toggleBtn = document.querySelector(`[data-tgl-btn]`);
+            let mainMenu = document.getElementById('main-menu')
+            toggleBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                toggleBtn.classList.toggle('active');
+                mainMenu.classList.toggle('active');
+            })
+        })
+    </script>
