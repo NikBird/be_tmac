@@ -12,26 +12,23 @@
 
 <body>
     <header class="header-area sticky-top">
-        <nav class="navbar navbar-expand-xl">
-            <div class="logo-part">
-                <a href="#/" class="navbar-brand m-0 h1" onclick="showLoading()"><img src="./icons/single-logo.png"></a>
-            </div>
-            <button class="navbar-toggler-alternative d-xl-none" type="button" data-toggle="collapse"
-                data-target="#navbarText" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-alternative-icon">
-                    <span></span>
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav main-menu">
-
-                    <li class="nav-item active"><a class="nav-link" id="tag1" href="#/witness"
-                            onclick="Link(1)">Witness</a>
+        <div class="cs-container-full">
+            <div class="header-g-wrapper">
+                <div class="logo-part">
+                    <a href="#" class="navbar-brand m-0 h1" onclick="showLoading()"><img
+                            src="./icons/single-logo.png"></a>
+                </div>
+                <button class="mobile-tgl-btn">
+                    <span class="navbar-toggler-alternative-icon">
+                        <span></span>
+                    </span>
+                </button>
+                <ul class="main-menu">
+                    <li class="nav-item active"><a href="#/witness" onclick="Link(1)">Witness</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" id="tag3" href="#/richlist" onclick="Link(3)">Richlist</a>
+                    <li class="nav-item"><a href="#/richlist" onclick="Link(3)">Richlist</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </div>
     </header>

@@ -1972,6 +1972,90 @@ button.toast-close-button {
   width: 36px
 }
 
+.main-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-g-wrapper {
+  display: grid;
+  grid-template-columns: 200px auto;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.navbar-toggler-alternative-icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-toggler-alternative-icon>span {
+  position: relative;
+  width: 26px;
+  margin: 0 auto;
+  background-color: #fff;
+  transition: background-color 0.35s 0s ease;
+}
+
+.navbar-toggler-alternative-icon>span::before,
+.navbar-toggler-alternative-icon>span::after {
+  position: absolute;
+  content: "";
+  width: 13px;
+  background-color: #fff;
+  transform-origin: 50% 50%;
+  transition: background-color 0.35s 0s ease, top 0.2s 0.4s ease, left 0.2s 0.2s ease, right 0.2s 0.2s ease, width 0.2s 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-toggler-alternative-icon>span::before {
+  top: 8px;
+  left: 13px;
+}
+
+.navbar-toggler-alternative-icon>span::after {
+  top: -8px;
+  right: 13px;
+}
+
+.mobile-tgl-btn {
+  display: none;
+}
+
+.cs-container-full {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  right: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media screen and (max-width: 1199px) {
+  .mobile-tgl-btn {
+    display: inline-block;
+  }
+
+  .main-menu {
+    display: none;
+  }
+}
+
 /* header css end */
 /* users-table area css start */
 .tb-content {
@@ -2059,4 +2143,176 @@ button.toast-close-button {
 }
 
 /* users-table area css end */
+
+/* footer css start */
+.footer {
+  margin-top: auto;
+  font-size: 10px;
+  padding: 30px 0;
+}
+
+.ft-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.ft-logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ft-logo span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.sc-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sc-links li a {
+  display: inline-block;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.sc-links li a:hover {
+  opacity: 1;
+}
+
+.sc-links li {
+  margin-left: 10px;
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.5;
+  margin-right: 14px;
+  letter-spacing: 0.4px;
+}
+
+.githublink {
+  margin-top: -3px;
+}
+
+.top-f-left a svg {
+  width: 18px;
+}
+
+.top-f-left svg path {
+  fill: #1db0b3;
+}
+
+.top-f-left a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.version {
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.sc-links li a img {
+  max-width: 14px;
+  max-height: 14px;
+}
+
+.single-logo span {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.5;
+  padding-left: 2px;
+  transform: translateY(2px);
+}
+
+.single-logo>a {
+  width: 30px;
+  display: inline-block;
+}
+
+.footer-content-top-box,
+.footer-content-bottom-box {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-content-top-box {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 9px;
+  padding-bottom: 9px;
+}
+
+.ft-bottom-g-wrapper {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.blocks_tab {
+  max-height: 330px;
+  overflow: hidden;
+}
+
+.ft-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ft-links li {
+  display: block;
+}
+
+.ft-links li a,
+.footer-widget p a {
+  display: inline-block;
+  color: #1fc1c3;
+  opacity: 0.5;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.ft-links li a:hover,
+.footer-widget p a:hover {
+  opacity: 1;
+}
+
+.ft-links li:not(:last-child) {
+  margin-bottom: 3px;
+}
+
+.footer-widget h5 {
+  font-size: 10px;
+  color: #fff;
+  opacity: 0.5;
+  margin-bottom: 5px;
+}
+
+.footer-widget p {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+.top-flex-wrapper,
+.ft-bottom-g-wrapper {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* footer css end */
+
 /* new css end */
