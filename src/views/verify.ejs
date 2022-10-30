@@ -54,15 +54,14 @@
         <div class="cs-container">
             <div id="userTab">
                 <ul class="tab-triggers">
-                    <li class="tab-link current" data-tab="verified-tab">Verified</li>
-                    <li class="tab-link" data-tab="pending-tab">Pending</li>
-                    <li class="tab-link" data-tab="denied-tab">Denied</li>
+                    <li class="tab-link current" data-tab="verified-tab"><span>Verified</span></li>
+                    <li class="tab-link" data-tab="pending-tab"><span>Pending</span></li>
+                    <li class="tab-link" data-tab="denied-tab"><span>Denied</span></li>
                 </ul>
 
                 <div class="tab-contents-wrapper">
                     <div class="tb-content current" id="verified-tab">
                         <div class="tb-inner">
-                            Verified Tab pane
                             <div class="tbl-cmn-rw">
                                 <%if (verified.length !=0){ %>
                                     <h3 class="tbl-title text-center"><span>Verifed Users</span></h3>
@@ -116,7 +115,6 @@
                     </div>
                     <div class="tb-content" id="denied-tab">
                         <div class="tb-inner">
-                            Denied Tab pane
                             <div class="tbl-cmn-rw">
                                 <%if (denied.length !=0){ %>
                                     <h3 class="tbl-title text-center"><span>Denied Users</span></h3>
