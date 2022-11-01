@@ -476,3 +476,68 @@ a {
 
 
 /* footer css end */
+
+
+/* ad-form-area css start */
+.search-username-fm {
+  background-color: #1e1f31;
+  padding: 34px 40px 40px;
+}
+
+.ad-form-area {
+  background-color: #131327;
+  padding-top: 60px;
+}
+
+.search-username-fm {
+  background-color: #1e1f31;
+  padding: 34px 40px 40px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  border: 1px solid #1fc1c3;
+  height: 44px;
+  background: transparent;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.box-btn {
+  padding: 12px 20px;
+  background-color: #1FC1C3;
+  border: 0;
+  font-weight: 600;
+  display: inline-block;
+  color: #121326;
+  font-size: 15px;
+  font-family: Open Sans;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: auto 155px;
+}
+
+.search-username-fm label {
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 15px;
+  display: block;
+  font-weight: 600;
+}
+
+.box-btn.logout-btn {
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+.logout-fm {
+  margin-left: 24px;
+}
+
+/* ad-form-area css end */
