@@ -22,12 +22,18 @@
                         <span></span>
                     </span>
                 </button>
-                <ul class="main-menu" id="main-menu">
-                    <li class="nav-item active"><a href="#/witness" onclick="Link(1)">Witness</a>
-                    </li>
-                    <li class="nav-item"><a href="#/richlist" onclick="Link(3)">Richlist</a>
-                    </li>
-                </ul>
+                <div class="header-right d-flex justify-content-end align-items-center">
+                    <ul class="main-menu" id="main-menu">
+                        <li class="nav-item active"><a href="#/witness" onclick="Link(1)">Witness</a>
+                        </li>
+                        <li class="nav-item"><a href="#/richlist" onclick="Link(3)">Richlist</a>
+                        </li>
+                    </ul>
+
+                    <form action="/logout" method="post" class="logout-fm">
+                        <button type="submit">Logout </button>
+                    </form>
+                </div>
             </div>
         </div>
     </header>

@@ -1,17 +1,14 @@
 <%- include('./common/header') %>
     <div class="ad-form-area">
         <div class="cs-container">
-            <form action="/logout" method="post">
-                <button type="submit" class="btn btn-primary btn-xs pull-right">Logout </button>
-                <p>check text</p>
-            </form>
-            <div>
-                <form action="/verify" method="post">
-                    <label for="fname">Username</label>
+            <form action="/verify" method="post" class="search-username-fm">
+                <label for="fname">Username</label>
+                <div class="input-wrapper">
                     <input type="text" id="fname" name="username" placeholder="Your name..">
                     <input type="submit" value="Search">
-                </form>
-            </div>
+                </div>
+            </form>
+
             <% if(data!=false) { %>
                 <form action="/editUser/<%= username %>" method="post">
 
@@ -164,46 +161,47 @@
                 </div>
             </div>
         </div>
-        <script>
+    </div>
+    <script>
 
-            function checker() {
-                if (window.confirm("Are you sure")) {
-                    document.getElementById("dUser").submit();
-                } else {
-                    return;
+        function checker() {
+            if (window.confirm("Are you sure")) {
+                document.getElementById("dUser").submit();
+            } else {
+                return;
+            }
+        }
+
+        let tabFunc = function (parentId) {
+            //get all tab link elements
+            let tabTriggers = document.querySelectorAll(`${parentId} .tab-link`);
+            //get all tab content elements
+            let tabContent = document.querySelectorAll(`${parentId} .tb-content`);
+            //loop through each tab
+            tabTriggers.forEach(function (each) {
+                {
+                    each.addEventListener('click', function () {
+                        //each time tab clicked remove all current classes
+                        //remove 'current' class from all tabs
+                        for (let i = 0; i < tabTriggers.length; i++) {
+                            tabTriggers[i].classList.remove('current');
+                        };
+                        //remove 'current' class from all tab content
+                        for (let i = 0; i < tabContent.length; i++) {
+                            tabContent[i].classList.remove('current');
+                        };
+                        //add current class back to the clicked tab
+                        this.className += ' current';
+                        //get data-tab attribute of what has been clicked
+                        let matchingTab = this.getAttribute('data-tab');
+                        //add current class to the tabContent element thats id matches the data-tab of the clicked tab
+                        document.getElementById(matchingTab).className += ' current';
+                    })
                 }
-            }
+            })
+        }
 
-            let tabFunc = function (parentId) {
-                //get all tab link elements
-                let tabTriggers = document.querySelectorAll(`${parentId} .tab-link`);
-                //get all tab content elements
-                let tabContent = document.querySelectorAll(`${parentId} .tb-content`);
-                //loop through each tab
-                tabTriggers.forEach(function (each) {
-                    {
-                        each.addEventListener('click', function () {
-                            //each time tab clicked remove all current classes
-                            //remove 'current' class from all tabs
-                            for (let i = 0; i < tabTriggers.length; i++) {
-                                tabTriggers[i].classList.remove('current');
-                            };
-                            //remove 'current' class from all tab content
-                            for (let i = 0; i < tabContent.length; i++) {
-                                tabContent[i].classList.remove('current');
-                            };
-                            //add current class back to the clicked tab
-                            this.className += ' current';
-                            //get data-tab attribute of what has been clicked
-                            let matchingTab = this.getAttribute('data-tab');
-                            //add current class to the tabContent element thats id matches the data-tab of the clicked tab
-                            document.getElementById(matchingTab).className += ' current';
-                        })
-                    }
-                })
-            }
+        tabFunc('#userTab');
 
-            tabFunc('#userTab');
-
-        </script>
-        <%- include('./common/footer') %>
+    </script>
+    <%- include('./common/footer') %>
