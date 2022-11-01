@@ -107,7 +107,8 @@ a {
   font-size: 18px;
   padding: 0 !important;
   transition: all .4s ease;
-  position: relative
+  position: relative;
+  text-decoration: none;
 }
 
 .main-menu li:not(:last-child) {
@@ -115,7 +116,13 @@ a {
 }
 
 .mobile-tgl-btn {
+  display: none;
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
   margin-left: auto;
+  background: transparent;
+  border: 0;
 }
 
 .navbar-toggler-alternative-icon {
@@ -132,7 +139,6 @@ a {
   margin: 0 auto;
   background-color: #fff;
   transition: background-color 0.35s 0s ease;
-  height: 2px;
 }
 
 .navbar-toggler-alternative-icon>span::before,
@@ -145,6 +151,15 @@ a {
   transition: background-color 0.35s 0s ease, top 0.2s 0.4s ease, left 0.2s 0.2s ease, right 0.2s 0.2s ease, width 0.2s 0.2s ease, transform 0.2s ease;
   height: 2px;
 }
+
+.active .navbar-toggler-alternative-icon>span::before,
+.active .navbar-toggler-alternative-icon>span::after {
+  top: 0;
+  width: 26px;
+  transition: top 0.2s ease, left 0.2s 0.2s ease, right 0.2s 0.2s ease, width 0.2s 0.2s ease, transform 0.2s 0.4s ease;
+  background: #131327;
+}
+
 
 .navbar-toggler-alternative-icon>span::before {
   top: 8px;
@@ -171,13 +186,6 @@ a {
   transform: rotate3d(0, 0, 1, -45deg);
 }
 
-.mobile-tgl-btn {
-  display: none;
-  position: relative;
-  z-index: 99;
-  cursor: pointer;
-}
-
 @media screen and (max-width: 1199px) {
   .mobile-tgl-btn {
     display: inline-block;
@@ -200,6 +208,15 @@ a {
   .main-menu.active {
     opacity: 1;
     visibility: visible;
+  }
+
+  .main-menu li a {
+    color: #121326;
+  }
+
+  .main-menu li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 }
 
@@ -238,6 +255,7 @@ a {
   padding: 10px;
   line-height: 1.3;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .tab-triggers li.current {
@@ -501,6 +519,11 @@ a {
   background: transparent;
   color: #fff;
   padding: 0 20px;
+  transition: .3s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
 }
 
 .box-btn {
