@@ -14,14 +14,9 @@
         <div class="cs-container-full">
             <div class="header-g-wrapper">
                 <div class="logo-part">
-                    <a href="#" class="navbar-brand m-0 h1" onclick="showLoading()"><img
-                            src="./icons/single-logo.png"></a>
+                    <a href="#" class="navbar-brand m-0 h1" onclick="showLoading()"><img src="/img/single-logo.png"></a>
                 </div>
-                <button class="mobile-tgl-btn" data-tgl-btn>
-                    <span class="navbar-toggler-alternative-icon">
-                        <span></span>
-                    </span>
-                </button>
+
                 <div class="header-right d-flex justify-content-end align-items-center">
                     <ul class="main-menu" id="main-menu">
                         <li class="nav-item active"><a href="#/witness" onclick="Link(1)">Witness</a>
@@ -31,8 +26,13 @@
                     </ul>
 
                     <form action="/logout" method="post" class="logout-fm">
-                        <button type="submit" class="box-btn login-btn">Logout </button>
+                        <button type="submit" class="box-btn logout-btn">Logout </button>
                     </form>
+                    <button class="mobile-tgl-btn" data-tgl-btn>
+                        <span class="navbar-toggler-alternative-icon">
+                            <span></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>

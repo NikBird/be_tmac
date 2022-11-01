@@ -139,6 +139,7 @@ a {
   margin: 0 auto;
   background-color: #fff;
   transition: background-color 0.35s 0s ease;
+  height: 2px;
 }
 
 .navbar-toggler-alternative-icon>span::before,
@@ -189,6 +190,7 @@ a {
 @media screen and (max-width: 1199px) {
   .mobile-tgl-btn {
     display: inline-block;
+    margin-left: 20px;
   }
 
   .main-menu {
@@ -327,6 +329,7 @@ a {
   margin-top: auto;
   font-size: 10px;
   padding: 30px 0;
+  background-color: #131327;
 }
 
 .ft-logo {
