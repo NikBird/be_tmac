@@ -9,41 +9,60 @@
                 </div>
             </form>
 
-            <% if(data!=false) { %>
-                <form action="/editUser/<%= username %>" method="post">
+            <div class="cs-modal-wrapper">
+                <div class="cs-modal-inner">
+                    <% if(data!=false) { %>
+                        <div class="response-content">
+                            <form action="/editUser/<%= username %>" method="post">
+                                <div class="message-content">
+                                    <p>Username : <%= username %>
+                                    </p>
+                                    <p>Status : <% if(status==true) { %> Verified <% } else {%> Denied <% } %>
+                                    </p>
+                                </div>
+                                <div class="selection-wrap">
+                                    <label for="fname">Change status to </label>
+                                    <select id="country" name="status">
+                                        <% if(status!=true) { %>
+                                            <option value="true">verified</option>
+                                            <% } %>
 
-                    <label>Username : <%= username %></label><br>
-                    <label>Status : <% if(status==true) { %> Verified <% } else {%> Denied <% } %> </label><br>
-                    <label for="fname">Change status to </label>
-                    <select id="country" name="status">
-                        <% if(status!=true) { %>
-                            <option value="true">verified</option>
-                            <% } %>
-
-                                <% if(status!=false) { %>
-                                    <option value="false">denied</option>
-                                    <% } %>
-                    </select><br>
-                    <input type="submit" value="Update">
-                </form>
-                <form action="/deleteUser/<%= username %>" id="dUser" method="post">
-                    <button type="button" onclick="checker()">delete</button>
-                </form>
-                <% } else if(add==true){ %>
-                    <label>There is no user with this username , want you add <b>
-                            <%= username %>
-                        </b> it to db ? </label><br>
-                    <div>
-                        <form action="/addUser/<%= username %>" method="post">
-                            <label for="fname">Status</label><br>
-                            <select id="country" name="status">
-                                <option value="true">verified</option>
-                                <option value="false">denied</option>
-                            </select><br>
-                            <input type="submit" value="Add">
+                                                <% if(status!=false) { %>
+                                                    <option value="false">denied</option>
+                                                    <% } %>
+                                    </select>
+                                </div>
+                                <div class="submit-btn-rw">
+                                    <input type="submit" value="Update">
+                                </div>
+                            </form>
+                        </div>
+                        <form action="/deleteUser/<%= username %>" id="dUser" method="post">
+                            <button type="button" class="delete-btn" onclick="checker()">delete</button>
                         </form>
-                    </div>
-                    <% } %>
+                        <% } else if(add==true){ %>
+                            <div class="response-content">
+                                <p class="message-para">
+                                    There is no user with this username , want you add <strong>
+                                        <%= username %>
+                                    </strong> it to db ?
+                                </p>
+                                <form action="/addUser/<%= username %>" method="post">
+                                    <div class="selection-wrap">
+                                        <label for="fname">Status</label>
+                                        <select id="country" name="status">
+                                            <option value="true">verified</option>
+                                            <option value="false">denied</option>
+                                        </select>
+                                    </div>
+                                    <div class="submit-btn-rw">
+                                        <input type="submit" value="Add">
+                                    </div>
+                                </form>
+                            </div>
+                            <% } %>
+                </div>
+            </div>
         </div>
     </div>
 
