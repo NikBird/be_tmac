@@ -585,6 +585,22 @@ a {
 
 .selection-wrap {
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.selection-wrap label {
+  font-size: 15px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.selection-wrap select {
+  background: #ddd;
+  border: 0;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .message-content {
@@ -605,6 +621,23 @@ a {
   align-items: center;
   justify-content: center;
   transition: .3s;
+}
+
+
+.response-content-inner {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 290px;
+  width: 100%;
+}
+
+.message-content p {
+  font-size: 15px;
+  color: black;
+}
+
+.message-content p:not(:last-child) {
+  margin-bottom: 6px;
 }
 
 /* ad-form-area css end */
