@@ -1,6 +1,31 @@
 <%- include('./common/header') %>
     <div class="ad-form-area">
         <div class="cs-container">
+
+            <div class="homepage_top">
+                <div class="homepageTop_comp">
+                    <p>Total Supply</p>
+                    <p id="totalSupply" style="font-size:large;color:#1FC1C3">15,164,493.306845 TMAC</p>
+                    <div class="view-blk" onclick="window.location.href = '#/richlist'">
+                        <p>View rich list</p>
+                        <img src="/img/arrowRight.svg">
+                    </div>
+                </div>
+                <div class="homepageTop_comp bdr-rg bdr-lf">
+                    <p>Last block</p>
+                    <p id="lastBlock" style="font-size: large;color:#1FC1C3">8009020</p>
+                    <div class="view-blk">
+                        <p>View all blocks</p><img src="/img/arrowRight.svg">
+                    </div>
+                </div>
+                <div class="homepageTop_comp">
+                    <p>Total witness</p>
+                    <p id="totalwitness" style="font-size: large;color:#1FC1C3">27</p>
+                    <div class="view-blk" onclick="window.location.href = '#/witness'">
+                        <p>View all witness</p><img src="/img/arrowRight.svg">
+                    </div>
+                </div>
+            </div>
             <form action="/verify" method="post" class="search-username-fm">
                 <label for="fname">Username</label>
                 <div class="input-wrapper">
