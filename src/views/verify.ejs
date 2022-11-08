@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+
             <form action="/verify" method="post" class="search-username-fm">
                 <label for="fname">Username</label>
                 <div class="input-wrapper">
@@ -171,7 +172,7 @@
                                             <div class="tbl-th">status</div>
                                         </div>
                                         <div class="tbl-body">
-                                            <% verified.forEach(function(row){ %>
+                                            <% denied.forEach(function(row){ %>
                                                 <div class="tbl-body-rw">
                                                     <div class="tbl-td">
                                                         <%= row.username %>

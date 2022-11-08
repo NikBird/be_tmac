@@ -687,4 +687,22 @@ a {
   border-left: 1px solid #84a0e2;
 }
 
+
+@media screen and (max-width: 991px) {
+  .homepage_top {
+    display: block;
+    border: 0;
+  }
+
+  .homepageTop_comp.bdr-rg.bdr-lf {
+    border-top: 1px solid #84a0e2;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 1px solid #84a0e2;
+  }
+
+
+
+}
+
 /* ad-form-area css end */
